@@ -3,7 +3,8 @@ $(document).ready(function(){
     var alert = ""; 
     
     var password = $("#password").val(); 
-    var email = ""; // $("#emailAddr").val(); 
+    var email = ""; // $("#emailAddr").val();
+    var signIn = $("#sign-in");
    updatesignInButton(email, password, lengthPassword, validateEmail )
     
 
@@ -17,7 +18,7 @@ $(document).ready(function(){
     $("#password").on("input", function(){
       password = $(this).val();
       box  = $(this);
-      alert = box.next();
+      alert = signIn.next();
       lengthPassword (password, box, alert);
       updatesignInButton(email, password, lengthPassword, validateEmail )
     })
@@ -29,7 +30,7 @@ $(document).ready(function(){
   
   
   
-  /////////////////////////////////////////////////////// functions //
+  /////////////////////////////////////////////////////// functions ///////////////////////////////////////////////
   function lengthPassword(password, box, alert) {
   
     if (password === "") {
@@ -55,7 +56,12 @@ $(document).ready(function(){
   function validateEmail(inputText) {
   
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(inputText.match(mailformat)) {
+    if(inputText === "") {
+      $("#emailAddr").css( "border", "4px double red" );
+      $("#emailAddr").next().text("* this field is mandatory.");
+      return false;
+    }
+    else if(inputText.match(mailformat)) {
   
       $("#emailAddr").css( "border", "4px double green" );
       $("#emailAddr").next().empty();
@@ -70,16 +76,9 @@ $(document).ready(function(){
   }
   
 
-    /////////////checking sign in ///
+    //checking sign in ///
     // disabling sign up button if 
     function updatesignInButton(email, password, lengthPassword, validateEmail ) {
-      // var isMatchPasswordValid = matchPassword();
-      // var isLengthPasswordValid = lengthPassword();
-      // var isValidateEmailValid = validateEmail();
-  
-      // console.log('matchPassword return:', isMatchPasswordValid);
-      // console.log('lengthPassword return:', isLengthPasswordValid);
-      // console.log('validateEmail return:', isValidateEmailValid);
   
       if (email === "" || password === "" || !lengthPassword() || !validateEmail() ) {
         $("#sign-in").prop('disabled', true);
