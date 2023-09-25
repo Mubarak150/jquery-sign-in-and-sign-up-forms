@@ -66,33 +66,9 @@ $(document).ready(function(){
   $("#sign-up").click(function(event) {
     event.preventDefault(); // Prevent the form from submitting
     updatesignUpButton(firstName, lastName, fatherName, cnic, contact, email, password, confirmPassword, matchPassword, lengthPassword, validateEmail, validateContact, validateCNIC)
-  })
+    })
 
-    // Event for sign-up CLICK:
-    // signUp.on("click", function(event) {
-    //   event.preventDefault(); // Prevent the form from submitting
-    
-    //   // Check if both boolMail and boolPass are true
-    //   if (boolMail && boolPass) {
-        
-    //     successNote.text("you are successfully signed up");
-    //     successNote.css("border","1px solid white");
-    //     successNote.css("padding","3px");
-    //     successNote.css("backgroundColor","#10B981");  
-    
-    //     // Add a delay before reloading the page
-    //     setTimeout(function() {
-    //       location.reload(); // Reload the page
-    //     }, 1000); // 1000 milliseconds = 1 seconds
-    //   }
-    
-      // else {
-      //   successNote.text("Please fill the credentials as prescribed");
-      //   successNote.css("border","1px solid white");
-      //   successNote.css("padding","3px");
-      //   successNote.css("backgroundColor","red");  
-      // }
-    });
+
 
 
 
@@ -233,24 +209,15 @@ function validateName (name, box, alert) {
   function updatesignUpButton(firstName, lastName, fatherName, cnic, contact, email, password, confirmPassword, matchPassword, lengthPassword, validateEmail, validateContact, validateCNIC) {
     var successNote = $("#h1").next();
     if (firstName === "" || lastName === "" || fatherName === "" || cnic === "" || contact === "" || email === "" || password === "" || confirmPassword === "" || !matchPassword() || !lengthPassword() || !validateEmail() || !validateContact() || !validateCNIC() ) {
-      // $("#sign-up").prop('disabled', true);
-      // $("#sign-up").css("backgroundColor", "red");
-      // $("#sign-up").css("color", "white");
-      // $("#sign-up").css("opacity", "0.5");
 
       successNote.text("Please fill the credentials as prescribed");
       successNote.css("border","1px solid white");
       successNote.css("padding","3px");
       successNote.css("backgroundColor","red"); 
 
-
-
-    } else {
-      // $("#sign-up").prop('disabled', false);
-      // $("#sign-up").css("backgroundColor", "green");
-      // $("#sign-up").css("color", "white");
-      // console.log("entered else");
-      // $("#sign-up").css("opacity", "1");
+    } 
+    
+    else {
 
       successNote.text("you are successfully signed up");
       successNote.css("border","1px solid white");
@@ -262,7 +229,5 @@ function validateName (name, box, alert) {
         location.reload(); // Reload the page
       }, 1000); // 1000 milliseconds = 1 seconds
     }
-  
-  
-  
-};
+   };
+  });
