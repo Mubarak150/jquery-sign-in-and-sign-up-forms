@@ -13,13 +13,13 @@
 
 <body>
 
-    <div id="main-container" style="background-image: url('tea-bg.avif')" class="bg-no-repeat bg-cover mx-auto grid grid-cols-5 w-screen h-screen shadow-lg ">
+    <div id="main-container" style="background-image: url('tea-bg.avif')" class="bg-no-repeat bg-cover mx-auto grid grid-cols-8  md:grid-cols-5  w-screen h-auto md:h-screen shadow-lg">
         
-        <div  class=" col-span-3 p-8">
+        <div  class="col-span-1 md:col-span-3 p-8">
             <span class=" text-2xl font-medium text-white">chai<span class="text-yellow-400">holic</span></span>         
         </div>
         
-        <div id="text-container" class="col-span-2 h-full py-14">
+        <div id="text-container" class="col-span-6 md:col-span-2 h-full py-14">
             <div class=" p-8  rounded ">
 
                 <!-- sign Up -->
@@ -27,11 +27,11 @@
                 <p  class="ml-1  mb-2 text-yellow-100 font-semibold bg-green-500 opacity-50 text-center text-sm"></p>
                 <form id="form" class="grid grid-cols-2 gap-x-1"  autocomplete="on">
 
-                    <div>
+                    <div class="col-span-2 md:col-span-1">
                         <input id="first-name" class="name first-name p-1 m-1   text-gray-200 w-full inline-block bg-black  opacity-50 placeholder-white-400" type="text" placeholder="First name"/>
                         <p  class="alert text-yellow-200 font-extrabold text-sm"></p>
                   </div>
-                  <div>
+                  <div class="col-span-2 md:col-span-1">
                         <input class="name last-name p-1 m-1   text-gray-200 w-full gap-1 inline-block bg-black  opacity-50 placeholder-white-400" type="text" placeholder="Last name">
                         <p  class="alert text-yellow-500 font-bold text-sm"></p>
                     </div>
@@ -56,12 +56,12 @@
                         <p  class="alert text-yellow-500 font-bold text-sm"></p>
                     </div>
                   
-                    <div>
+                    <div class="col-span-2 md:col-span-1">
                         <input id="password" class="password p-1 m-1 text-gray-200 w-full inline-block bg-black opacity-50 placeholder-white-400" type="password" placeholder="password, 6 charachers min">
                         <p  class="alert text-yellow-500 font-bold text-sm"></p>
                     </div>
              
-                    <div>        
+                    <div class="col-span-2 md:col-span-1">        
                         <input id="confirm-password" class="confirm-password p-1 m-1 text-gray-200 font-light w-full  opacity-50 inline-block bg-black  placeholder-white-400 col-span-2" type="password" placeholder="Confirm password">
                         <p  class="alert text-yellow-500 font-bold text-sm"></p>
                     </div>
@@ -71,7 +71,7 @@
                 </form>
             </div>
             <center>
-                <br>
+                <br class="md:hidden">
                 <p class="text-gray-100" ><a class="text-yellow-500 font-bold" href="signIn.html">sign in</a>, if you already have an account</p>
             </center>
         </div>     
